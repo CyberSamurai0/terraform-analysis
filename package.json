@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@ediri/vultr": "^2.23.1"
+  }
+}
