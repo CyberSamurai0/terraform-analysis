@@ -10,5 +10,7 @@ vultr.getInstances({
     instances.instances.forEach((instance) => {
         pulumi.log.info(`Instance ID: ${instance.id}, Status: ${instance.status}`);
     });
+}).catch((error) => {
+    pulumi.log.error(`Error fetching instances: ${error.message}`);
 });
 
