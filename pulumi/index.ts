@@ -2,13 +2,9 @@ import * as pulumi from "@pulumi/pulumi";
 
 import * as vultr from "@ediri/vultr";
 
-let v = vultr.getBareMetalServer({
+const activeInstances = vultr.getInstances({
     filters: [{
-        name: "label",
-        values: ["samurai01"]
+        name: "status",
+        values: ["active"],
     }],
-}).then((server) => {
-    console.log(server);
-}).catch((err) => {
-    console.error(err);
-});
+})
