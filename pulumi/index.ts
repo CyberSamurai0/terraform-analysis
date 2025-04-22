@@ -12,16 +12,19 @@ const ProvisionScript = new vultr.StartupScript("ProvisionScript", {
     type: "boot"
 });
 
+// Retrieve the exact OS ID for Ubuntu 22.04 LTS x64 from the Vultr API
+// Internally this performs an authenticated call to https://api.vultr.com/v2/os
 let Ubuntu: string | undefined = undefined;
 vultr.getOs({
     filters: [{
         name: "name",
-        values: ["Ubuntu 22.04 x64"]
+        values: ["Ubuntu 22.04 LTS x64"]
     }],
 }).then(os => {
     Ubuntu = os.id;
 });
 
+// Create a new Vultr instance
 export const instance = new vultr.Instance("pulumi-instance", {
     // Region: Seattle, Washington
     region: "sea",
