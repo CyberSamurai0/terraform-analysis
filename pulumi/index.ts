@@ -32,8 +32,8 @@ export const instance = new vultr.Instance("pulumi-instance", {
     // Instance type: 1 vCPU, 1 GB RAM, 25 GB SSD, $5.00month ($0.007/hour)
     plan: "vc2-1c-1gb",
 
-    // Ubuntu 22.04 x64
-    osId: Ubuntu,
+    // Ubuntu 22.04 LTS x64
+    osId: Ubuntu || 1743, // Current ID for Ubuntu 22.04 LTS x64
 
     // Configure Hostname
     hostname: "pulumi-instance",
