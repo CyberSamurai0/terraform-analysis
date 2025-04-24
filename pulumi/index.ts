@@ -29,7 +29,7 @@ export const instance = new vultr.Instance("pulumi-instance", {
     // Region: Seattle, Washington
     region: "sea",
 
-    // Instance type: 1 vCPU, 1 GB RAM, 25 GB SSD, $5.00month ($0.007/hour)
+    // Instance type: 1 vCPU, 1 GB RAM, 25 GB SSD, $5.00/month ($0.007/hour)
     plan: "vc2-1c-1gb",
 
     // Ubuntu 22.04 LTS x64
