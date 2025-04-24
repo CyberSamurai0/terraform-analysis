@@ -33,7 +33,7 @@ resource "vultr_instance" "terraform-instance" {
     plan = "vc2-1c-1gb"
 
     # Ubuntu 22.04 LTS x64
-    os_id = coalesce(vultr_os.Ubuntu.id, 1743)
+    os_id = coalesce(data.vultr_os.Ubuntu.id, 1743)
 
     # Configure Hostname
     hostname = "terraform-instance"
